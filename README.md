@@ -115,7 +115,7 @@ SOFTWARE.
 [addon-wireguard-client]: https://github.com/bigmoby/addon-wireguard-client
 [addon-doc-wireguard-client]: https://github.com/bigmoby/addon-wireguard-client/blob/main/README.md
 [wireguard-client-issue]: https://github.com/bigmoby/addon-wireguard-client/issues
-[wireguard-client-version-shield]: https://img.shields.io/badge/version-0.0.4-blue.svg
+[wireguard-client-version-shield]: https://img.shields.io/badge/version-0.1.0-blue.svg
 [wireguard-client-aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [wireguard-client-amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [wireguard-client-armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
