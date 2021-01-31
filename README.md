@@ -70,6 +70,16 @@ We have set up a separate document containing our
 
 Thank you for being involved! :heart_eyes:
 
+## Sponsor
+
+Please, if You want support this kind of projects:
+
+<a href="https://www.buymeacoffee.com/bigmoby" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
+Many Thanks,
+
+Fabio Mauro
+
 ## Adding a new add-on
 
 We are currently not accepting third party add-ons to this repository.
@@ -83,8 +93,6 @@ For questions, please contact [Fabio Mauro][bigmoby]:
 MIT License
 
 Copyright (c) 2020-2021 Fabio Mauro
-
-Copyright (c) 2017-2021 Franck Nijhof
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
