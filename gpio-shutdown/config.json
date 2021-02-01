@@ -1,0 +1,36 @@
+{
+  "name":"GPIO Shutdown",
+  "version":"0.0.1",
+  "slug":"gpio_shutdown",
+  "description":"Home Assistant GPIO add-on to support shutdown command",
+  "url":"https://github.com/bigmoby/addon-gpio-shutdown",
+  "startup":"application",
+  "arch":[
+     "armhf",
+     "armv7"
+  ],
+  "devices":[
+     "/dev/mem:/dev/mem:rwm"
+  ],
+  "apparmor":true,
+  "host_network":false,
+  "init":false,
+  "full_access":false,
+  "boot":"auto",
+  "hassio_api":true,
+  "hassio_role":"manager",
+  "gpio":true,
+  "privileged":[
+     "SYS_RAWIO"
+  ],
+  "options":{
+     "shutdown_button_pin":4,
+     "shutdown_trigger_level":1,
+     "pause_before_shutdown_secs":5
+  },
+  "schema":{
+     "shutdown_button_pin":"int(1,27)",
+     "shutdown_trigger_level":"int(0,1)",
+     "pause_before_shutdown_secs":"int(0,1000)"
+  }
+}
