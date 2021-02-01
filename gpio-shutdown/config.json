@@ -32,5 +32,6 @@
      "shutdown_button_pin":"int(1,27)",
      "shutdown_trigger_level":"int(0,1)",
      "pause_before_shutdown_secs":"int(0,1000)"
-  }
+  },
+  "image": "bigmoby/{arch}-addon-gpio-shutdown"
 }
