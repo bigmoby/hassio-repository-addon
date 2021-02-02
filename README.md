@@ -46,7 +46,7 @@ Fast, modern, secure VPN tunnel
 ![Supports armhf Architecture][gpio-shutdown-armhf-shield]
 ![Supports armv7 Architecture][gpio-shutdown-armv7-shield]
 
-Fast, modern, secure VPN tunnel
+Home Assistant GPIO add-on to support shutdown command.
 
 [:books: GPIO Shutdown add-on documentation][addon-doc-gpio-shutdown]
 
