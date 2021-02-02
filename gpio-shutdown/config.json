@@ -1,6 +1,6 @@
 {
   "name":"GPIO Shutdown",
-  "version":"0.0.1",
+  "version":"0.0.2",
   "slug":"gpio_shutdown",
   "description":"Home Assistant GPIO add-on to support shutdown command",
   "url":"https://github.com/bigmoby/addon-gpio-shutdown",
