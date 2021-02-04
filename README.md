@@ -40,15 +40,6 @@ Fast, modern, secure VPN tunnel
 
 [:books: WireGuard add-on documentation][addon-doc-wireguard-client]
 
-### &#10003; [GPIO Shutdown][addon-gpio-shutdown]
-
-![Latest Version][gpio-shutdown-version-shield]
-![Supports armhf Architecture][gpio-shutdown-armhf-shield]
-![Supports armv7 Architecture][gpio-shutdown-armv7-shield]
-
-Home Assistant GPIO add-on to support shutdown command.
-
-[:books: GPIO Shutdown add-on documentation][addon-doc-gpio-shutdown]
 
 ## Releases
 
@@ -122,14 +113,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-
-
-[addon-gpio-shutdown]: https://github.com/bigmoby/addon-gpio-shutdown
-[addon-doc-gpio-shutdown]: https://github.com/bigmoby/gpio-shutdown/blob/main/README.md
-[gpio-shutdown-issue]: https://github.com/bigmoby/addon-gpio-shutdown/issues
-[gpio-shutdown-version-shield]: https://img.shields.io/github/v/release/bigmoby/addon-gpio-shutdown.svg
-[gpio-shutdown-armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
-[gpio-shutdown-armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
 
 [addon-wireguard-client]: https://github.com/bigmoby/addon-wireguard-client
 [addon-doc-wireguard-client]: https://github.com/bigmoby/addon-wireguard-client/blob/main/README.md
