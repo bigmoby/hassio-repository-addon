@@ -1,6 +1,6 @@
 {
    "name":"WireGuard Client",
-   "version":"0.1.1",
+   "version":"0.1.2",
    "slug":"wireguard_client",
    "description":"Fast, modern, secure Wireguard tunnel (client)",
    "url":"https://github.com/bigmoby/addon-wireguard-client",
@@ -36,7 +36,9 @@
          "dns":[
             "8.8.8.8",
             "8.8.4.4"
-         ]
+         ],
+         "post_up": "iptables -t nat -A POSTROUTING -o wg0 -j MASQUERADE",
+         "post_down": "iptables -t nat -D POSTROUTING -o wg0 -j MASQUERADE"
       },
       "peer":{
          "public_key": "",
