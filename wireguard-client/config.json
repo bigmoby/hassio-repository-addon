@@ -57,7 +57,9 @@
          "address": "str",
          "dns":[
             "str"
-         ]
+         ],
+         "post_up": "str",
+         "post_down": "str"
       },
       "peer":{
          "public_key":"str?",
