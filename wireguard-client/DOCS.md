@@ -55,7 +55,7 @@ interface:
     - 8.8.8.8
     - 8.8.4.4
 peer:
-  public_key: your-public-key=
+  public_key: your-public-key
   pre_shared_key: your-preshared-key
   endpoint: 'xxxxxxxxxxxxxxx.duckdns.org:51820'
   allowed_ips:
