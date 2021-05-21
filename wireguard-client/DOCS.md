@@ -54,6 +54,8 @@ interface:
   dns:
     - 8.8.8.8
     - 8.8.4.4
+  post_up: iptables -t nat -A POSTROUTING -o wg0 -j MASQUERADE
+  post_down: iptables -t nat -D POSTROUTING -o wg0 -j MASQUERADE
 peer:
   public_key: your-public-key
   pre_shared_key: your-preshared-key
@@ -65,6 +67,27 @@ peer:
 
 1. Save the configuration.
 1. Start the "WireGuard" add-on
+
+## WireGuard client status API
+
+This add-on provides a simple WireGuard status API. This API is not an
+official API, darn simple, and experimental, but does allow you to pull
+in data from the add-on into Home Assistant.
+
+With the use of the [Home Assistant RESTful][ha-rest] integration, one should
+be able to grab some interesting data from this add-on.
+
+Example:
+
+```yaml
+sensor:
+  - platform: rest
+    resource: http://a0d7b954-wireguard
+```
+
+At this moment, we do not have template or examples on how this could be
+used effectively with Home Assistant.
+If you have, sharing would be appreciated!
 
 ## Authors & contributors
 
