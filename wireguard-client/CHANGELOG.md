@@ -1,3 +1,12 @@
+## What’s changed in Wireguard Client Add-on v0.2.0
+## 🚀 Enhancements
+
+- Migrate JSON config to YAML
+- Upgrade add-on base image to 11.0.0
+
+### ⬆️ Dependency updates
+
+- Upgrade wireguard-tools to 1.0.20210914-r0
 ## What’s changed in Wireguard Client Add-on v0.1.9
 ### 💣 BREAKING CHANGES
 
