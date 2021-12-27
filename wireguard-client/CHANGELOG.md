@@ -7,6 +7,7 @@
 ### ⬆️ Dependency updates
 
 - Upgrade wireguard-tools to 1.0.20210914-r0
+
 ## What’s changed in Wireguard Client Add-on v0.1.9
 ### 💣 BREAKING CHANGES
 
