@@ -93,7 +93,7 @@ For questions, please contact [Fabio Mauro][bigmoby]:
 
 MIT License
 
-Copyright (c) 2020-2021 Fabio Mauro
+Copyright (c) 2020-2022 Fabio Mauro
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -130,8 +130,8 @@ SOFTWARE.
 [bigmoby]: https://github.com/bigmoby
 
 [issue]: https://github.com/hassio-addons/repository/issues
-[license-shield]: https://img.shields.io/github/license/hassio-addons/repository.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2021.svg
+[license-shield]: https://img.shields.io/github/license/bigmoby/hassio-repository-addon.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2022.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 
 [semver]: http://semver.org/spec/v2.0.0.html
