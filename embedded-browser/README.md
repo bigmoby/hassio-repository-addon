@@ -11,5 +11,3 @@ Please, if You want support this kind of projects:
 Many Thanks,
 
 Fabio Mauro
-
-[wireguard]: https://www.wireguard.com
