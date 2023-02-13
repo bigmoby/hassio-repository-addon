@@ -54,8 +54,9 @@ interface:
   dns:
     - 8.8.8.8
     - 8.8.4.4
-  post_up: iptables -t nat -A POSTROUTING -o wg0 -j MASQUERADE
-  post_down: iptables -t nat -D POSTROUTING -o wg0 -j MASQUERADE
+  post_up: "iptables -t nat -A POSTROUTING -o wg0 -j MASQUERADE; iptables -A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu"
+  post_down: "iptables -t nat -D POSTROUTING -o wg0 -j MASQUERADE; iptables -D FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu"
+  mtu: 1420
 peers:
   - public_key: your-public-key
     pre_shared_key: your-preshared-key
@@ -99,7 +100,7 @@ This is a fork of Wireguard Add-on
 
 MIT License
 
-Copyright (c) 2020-2021 Fabio Mauro
+Copyright (c) 2020-2023 Fabio Mauro
 
 Copyright (c) 2019-2020 Franck Nijhof
 

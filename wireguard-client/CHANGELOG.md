@@ -1,3 +1,9 @@
+## What’s changed in Wireguard Client Add-on v0.2.1
+## 🚀 Enhancements
+
+- Add MTU configuration param
+- Readme fix
+
 ## What’s changed in Wireguard Client Add-on v0.2.0
 ## 🚀 Enhancements
 
