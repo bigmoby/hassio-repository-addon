@@ -48,6 +48,7 @@ Fast, modern, secure VPN tunnel
 ![Supports aarch64 Architecture][embedded-browser-aarch64-shield]
 ![Supports amd64 Architecture][embedded-browser-amd64-shield]
 ![Supports i386 Architecture][embedded-browser-i386-shield]
+![Supports armv7 Architecture][embedded-browser-armv7-shield]
 
 [WARNING] Please DON'T use this add-on! It's in very early development stage [WARNING]
 
@@ -145,6 +146,7 @@ SOFTWARE.
 [embedded-browser-amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [embedded-browser-armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
 [embedded-browser-i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
+[embedded-browser-armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
 
 [awesome-shield]: https://img.shields.io/badge/awesome%3F-yes-brightgreen.svg
 [awesome]: https://awesome-ha.com
