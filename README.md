@@ -43,7 +43,7 @@ Fast, modern, secure VPN tunnel
 
 ### &#10003; [Embedded browser][addon-embedded-browser]
 
-![Latest Version][wireguard-client-version-shield]
+![Latest Version][embedded-browser-version-shield]
 ![Supports armhf Architecture][embedded-browser-armhf-shield]
 ![Supports aarch64 Architecture][embedded-browser-aarch64-shield]
 ![Supports amd64 Architecture][embedded-browser-amd64-shield]
