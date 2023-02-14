@@ -5,8 +5,6 @@ slug: embdbrowser
 description: A simple embedded browser
 url: https://github.com/bigmoby/addon-embedded-browser/tree/main/embedded_browser
 arch: [ aarch64, amd64, armhf, armv7, i386 ]
-devices:
-  - /dev/mem
 discovery:
   - embdbrowser
 apparmor: false
@@ -21,6 +19,4 @@ startup: services
 ingress: true
 ingress_entry: ingress.html
 kernel_modules: true
-options:
-  device: null
 image: "bigmoby/{arch}-addon-embedded-browser"
