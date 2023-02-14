@@ -1,6 +1,6 @@
 ---
 name: Embedded browser
-version: 0.0.1
+version: 0.0.2
 slug: embedded-browser
 description: A simple embedded browser
 url: https://github.com/bigmoby/addon-embedded-browser/tree/main/embedded_browser
