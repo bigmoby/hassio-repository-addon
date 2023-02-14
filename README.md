@@ -41,6 +41,18 @@ Fast, modern, secure VPN tunnel
 [:books: WireGuard add-on documentation][addon-doc-wireguard-client]
 
 
+### &#10003; [Embedded browser][addon-embedded-browser]
+
+![Latest Version][wireguard-client-version-shield]
+![Supports armhf Architecture][embedded-browser-armhf-shield]
+![Supports aarch64 Architecture][embedded-browser-aarch64-shield]
+![Supports amd64 Architecture][embedded-browser-amd64-shield]
+![Supports i386 Architecture][embedded-browser-i386-shield]
+
+[WARNING] Please DON'T use this add-on! It's in very early development stage [WARNING]
+
+[:books: Embedded browser add-on documentation][addon-doc-embedded-browser]
+
 ## Releases
 
 Releases are based on [Semantic Versioning][semver], and use the format
@@ -58,6 +70,7 @@ GitHub repository for each add-on. Please ensure you are creating the issue
 on the correct GitHub repository matching the add-on.
 
 - [Open an issue for the add-on: WireGuard][wireguard-client-issue]
+- [Open an issue for the add-on: Embedded browser][embedded-browser-issue]
 
 For a general repository issue or add-on ideas [open an issue here][issue]
 
@@ -123,6 +136,15 @@ SOFTWARE.
 [wireguard-client-armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
 [wireguard-client-armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
 [wireguard-client-i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
+
+[addon-embedded-browser]: https://github.com/bigmoby/addon-embedded-browser
+[addon-doc-embedded-browser]: https://github.com/bigmoby/addon-embedded-browser/blob/main/README.md
+[embedded-browser-issue]: https://github.com/bigmoby/addon-embedded-browser/issues
+[embedded-browser-version-shield]: https://img.shields.io/github/v/release/bigmoby/addon-embedded-browser.svg
+[embedded-browser-aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
+[embedded-browser-amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
+[embedded-browser-armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
+[embedded-browser-i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
 
 [awesome-shield]: https://img.shields.io/badge/awesome%3F-yes-brightgreen.svg
 [awesome]: https://awesome-ha.com
