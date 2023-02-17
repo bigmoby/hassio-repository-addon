@@ -1,6 +1,6 @@
 ---
 name: Embedded browser
-version: 0.0.1
+version: 0.0.2
 slug: embdbrowser
 description: A simple embedded browser
 url: https://github.com/bigmoby/addon-embedded-browser/tree/main/embedded_browser
@@ -9,15 +9,16 @@ arch:
   - armhf
   - aarch64
 apparmor: false
-host_network: true
+host_network: false
+stage: experimental
 init: false
 hassio_api: true
 privileged:
   - NET_ADMIN
-udev: true
-usb: true
+udev: false
+usb: false
 startup: services
 ingress: true
 ingress_entry: ingress.html
-kernel_modules: true
+kernel_modules: false
 image: "bigmoby/{arch}-addon-embedded-browser"
