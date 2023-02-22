@@ -1,8 +1,8 @@
 ---
-name: Firefox embedded browser
-version: 0.0.1
+name: Surf embedded browser
+version: 0.0.2
 slug: embdbrowser
-description: Firefox embedded browser
+description: Surf embedded browser
 url: https://github.com/bigmoby/addon-embedded-browser/tree/main/embedded_browser
 arch:
   - amd64
