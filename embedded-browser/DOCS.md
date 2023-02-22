@@ -1,6 +1,6 @@
-# Home Assistant Bigmoby Add-on: Embedded browser
+# Home Assistant Bigmoby Add-on: Firefox embedded browser
 
-[WARNING] Please DON'T use this add-on! It's in very early development stage [WARNING]
+[WARNING] Please DO NOT use this add-on unless you really KNOW what you are doing! It is in a very early stage of development. [WARNING]
 
 ## Sponsor
 
