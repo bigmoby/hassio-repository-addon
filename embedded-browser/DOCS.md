@@ -1,4 +1,4 @@
-# Home Assistant Bigmoby Add-on: Firefox embedded browser
+# Home Assistant Bigmoby Add-on: Surf embedded browser
 
 [WARNING] Please DO NOT use this add-on unless you really KNOW what you are doing! It is in a very early stage of development. [WARNING]
 
