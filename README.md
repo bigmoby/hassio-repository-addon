@@ -71,7 +71,7 @@ GitHub repository for each add-on. Please ensure you are creating the issue
 on the correct GitHub repository matching the add-on.
 
 - [Open an issue for the add-on: WireGuard][wireguard-client-issue]
-- [Open an issue for the add-on: Embedded browser][embedded-browser-issue]
+- [Open an issue for the add-on: Firefox embedded browser][embedded-browser-issue]
 
 For a general repository issue or add-on ideas [open an issue here][issue]
 
