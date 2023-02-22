@@ -41,7 +41,7 @@ Fast, modern, secure VPN tunnel
 [:books: WireGuard add-on documentation][addon-doc-wireguard-client]
 
 
-### &#10003; [Firefox embedded browser][addon-embedded-browser]
+### &#10003; [Surf embedded browser][addon-embedded-browser]
 
 ![Latest Version][embedded-browser-version-shield]
 ![Supports armhf Architecture][embedded-browser-armhf-shield]
@@ -52,7 +52,7 @@ Fast, modern, secure VPN tunnel
 
 [WARNING] Please DO NOT use this add-on unless you really KNOW what you are doing! It is in a very early stage of development. [WARNING]
 
-[:books: Firefox embedded browser add-on documentation][addon-doc-embedded-browser]
+[:books: Surf embedded browser add-on documentation][addon-doc-embedded-browser]
 
 ## Releases
 
