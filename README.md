@@ -30,11 +30,9 @@ https://github.com/bigmoby/hassio-repository-addon
 ### &#10003; [WireGuard Client][addon-wireguard-client]
 
 ![Latest Version][wireguard-client-version-shield]
-![Supports armhf Architecture][wireguard-client-armhf-shield]
 ![Supports armv7 Architecture][wireguard-client-armv7-shield]
 ![Supports aarch64 Architecture][wireguard-client-aarch64-shield]
 ![Supports amd64 Architecture][wireguard-client-amd64-shield]
-![Supports i386 Architecture][wireguard-client-i386-shield]
 
 Fast, modern, secure VPN tunnel
 
@@ -44,10 +42,8 @@ Fast, modern, secure VPN tunnel
 ### &#10003; [Surf embedded browser][addon-embedded-browser]
 
 ![Latest Version][embedded-browser-version-shield]
-![Supports armhf Architecture][embedded-browser-armhf-shield]
 ![Supports aarch64 Architecture][embedded-browser-aarch64-shield]
 ![Supports amd64 Architecture][embedded-browser-amd64-shield]
-![Supports i386 Architecture][embedded-browser-i386-shield]
 ![Supports armv7 Architecture][embedded-browser-armv7-shield]
 
 [WARNING] Please DO NOT use this add-on unless you really KNOW what you are doing! It is in a very early stage of development. [WARNING]
@@ -134,9 +130,7 @@ SOFTWARE.
 [wireguard-client-version-shield]: https://img.shields.io/github/v/release/bigmoby/addon-wireguard-client.svg
 [wireguard-client-aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [wireguard-client-amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[wireguard-client-armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
 [wireguard-client-armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
-[wireguard-client-i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
 
 [addon-embedded-browser]: https://github.com/bigmoby/addon-embedded-browser
 [addon-doc-embedded-browser]: https://github.com/bigmoby/addon-embedded-browser/blob/main/README.md
@@ -155,7 +149,7 @@ SOFTWARE.
 
 [issue]: https://github.com/hassio-addons/repository/issues
 [license-shield]: https://img.shields.io/github/license/bigmoby/hassio-repository-addon.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 
 [semver]: http://semver.org/spec/v2.0.0.html
