@@ -1,3 +1,13 @@
+## What’s changed in Wireguard Client Add-on v0.2.3
+## 🚀 Enhancements
+
+* Comply with the log level setting when logging the current WireGuard … by @jlehtine in https://github.com/bigmoby/addon-wireguard-client/pull/30
+* Adds Known issues by @ziriuz84 in https://github.com/bigmoby/addon-wireguard-client/pull/33
+
+### ⬆️ Dependency updates
+
+- Upgrade wireguard-tools to 1.0.20210914-r4
+
 ## What’s changed in Wireguard Client Add-on v0.2.2
 ### 🛠 Fixs
 
