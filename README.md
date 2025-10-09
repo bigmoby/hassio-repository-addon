@@ -30,7 +30,6 @@ https://github.com/bigmoby/hassio-repository-addon
 ### &#10003; [WireGuard Client][addon-wireguard-client]
 
 ![Latest Version][wireguard-client-version-shield]
-![Supports armv7 Architecture][wireguard-client-armv7-shield]
 ![Supports aarch64 Architecture][wireguard-client-aarch64-shield]
 ![Supports amd64 Architecture][wireguard-client-amd64-shield]
 
@@ -103,7 +102,7 @@ For questions, please contact [Fabio Mauro][bigmoby]:
 
 MIT License
 
-Copyright (c) 2020-2024 Fabio Mauro
+Copyright (c) 2020-2025 Fabio Mauro
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -130,7 +129,6 @@ SOFTWARE.
 [wireguard-client-version-shield]: https://img.shields.io/github/v/release/bigmoby/addon-wireguard-client.svg
 [wireguard-client-aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [wireguard-client-amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[wireguard-client-armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
 
 [addon-embedded-browser]: https://github.com/bigmoby/addon-embedded-browser
 [addon-doc-embedded-browser]: https://github.com/bigmoby/addon-embedded-browser/blob/main/README.md
