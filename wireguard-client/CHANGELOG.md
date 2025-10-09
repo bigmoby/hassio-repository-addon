@@ -1,3 +1,14 @@
+## What's changed in Wireguard Client Add-on v0.2.4
+
+### 💣 BREAKING CHANGES
+
+- **Removed support for deprecated architectures**: Following Home Assistant's deprecation notice, removed support for i386, armhf, and armv7 architectures. Only aarch64 and amd64 are now supported.
+
+### 🚀 Enhancements
+
+- Aligned with Home Assistant's official architecture support policy
+- Simplified build process by removing legacy architecture support
+
 ## What’s changed in Wireguard Client Add-on v0.2.3
 ## 🚀 Enhancements
 
