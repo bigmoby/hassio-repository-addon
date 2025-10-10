@@ -1,3 +1,28 @@
+## What's changed in Wireguard Client Add-on v0.2.6
+
+## 🙏 Thank You for Your Support!
+
+**Your support through [Buy Me a Coffee](https://www.buymeacoffee.com/bigmoby) fuels this project!** 🍺 Every coffee helps me continue developing new features and improvements. If you find this addon useful, consider supporting the project - it really makes a difference! 💙
+
+<a href="https://www.buymeacoffee.com/bigmoby" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
+---
+
+### 🛠 Fixes
+
+- **Fixed port conflicts**: Separated status API (port 51821) and services API (port 51822) to prevent conflicts
+- **Fixed API documentation**: Updated documentation with correct hostname and port configurations
+
+### 🚀 Enhancements
+
+- **Enhanced API**: Extended status API with comprehensive sensor data including traffic statistics, uptime, and peer information
+- **Service endpoints**: Added RESTful endpoints for VPN actions (reconnect, restart, test)
+- **Smart testing**: Comprehensive connection test that checks interface status, handshake validity, and server connectivity
+- **Home Assistant integration**: Full compatibility with RESTful sensor platform for seamless automation
+- **Code optimization**: Cleaned up redundant endpoints and unused variables for better performance
+- **Non-standard ports**: Uses ports 51821 and 51822 to avoid conflicts with common services
+- **Comprehensive documentation**: Added detailed API documentation with examples for sensors and services
+
 ## What's changed in Wireguard Client Add-on v0.2.5
 
 ### 🛠 Fixes
