@@ -1,3 +1,19 @@
+## What's changed in Wireguard Client Add-on v0.2.5
+
+### 🛠 Fixes
+
+- **Fixed "wg0 already exists" error**: Improved startup and shutdown scripts to handle existing WireGuard interfaces gracefully
+- **Enhanced error handling**: Added automatic cleanup of existing interfaces before starting new connections
+- **Fixed interface cleanup**: Better handling of stale WireGuard interfaces during addon restarts
+
+### 🚀 Enhancements
+
+- **Improved startup script**: Now detects and cleans up existing WireGuard interfaces automatically
+- **Enhanced shutdown script**: Better cleanup process with fallback manual interface removal
+- **Better logging**: More detailed logging for troubleshooting interface conflicts
+- **Robust interface management**: Automatic detection and cleanup of stale WireGuard interfaces
+  
+
 ## What's changed in Wireguard Client Add-on v0.2.4
 
 ### 💣 BREAKING CHANGES
