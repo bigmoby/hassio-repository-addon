@@ -1,4 +1,4 @@
-## What's changed in Wireguard Client Add-on v0.2.6
+## What's changed in Wireguard Client Add-on v0.2.7
 
 ## 🙏 Thank You for Your Support!
 
@@ -7,6 +7,14 @@
 <a href="https://www.buymeacoffee.com/bigmoby" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 ---
+
+### 🚀 Enhancements
+
+- **Replaced netcat with socat**: Improved HTTP server with persistent connections and better performance
+- **Unified API**: Combined status and services into single endpoint on port 51821
+
+
+## What's changed in Wireguard Client Add-on v0.2.6
 
 ### 🛠 Fixes
 
