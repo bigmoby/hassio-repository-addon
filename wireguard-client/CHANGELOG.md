@@ -1,18 +1,27 @@
+## What's changed in Wireguard Client Add-on v0.2.8
+
+### 🐛 Fixes
+
+- **Fixed critical API bug**: Resolved double JSON serialization issue where `peers` field was returned as a string instead of a JSON array. This was causing template errors in Home Assistant sensors (`Template variable warning: 'str object' has no attribute 'peer_1'`). The API now correctly returns `peers` as a proper JSON array.
+
+- **Fixed Jinja2 templates**: Corrected Home Assistant sensor templates to properly access `peers[0]` instead of `peers.peer_1`, ensuring compatibility with the array structure.
+
+- **Fixed API response format**: `latest_handshake` now correctly returns `"Never"` (as a string) when no handshake has occurred, instead of an empty string, making template handling more reliable.
+
+### ⚠️ Known Issues
+
+- **Port configuration after update**: If you upgraded from v0.2.6 or earlier and the API port is not working, you may need to restore default network settings in the add-on configuration. This is a migration issue where the port configuration doesn't automatically update during the upgrade process. See v0.2.7 release notes for details.
+
 ## What's changed in Wireguard Client Add-on v0.2.7
-
-## 🙏 Thank You for Your Support!
-
-**Your support through [Buy Me a Coffee](https://www.buymeacoffee.com/bigmoby) fuels this project!** 🍺 Every coffee helps me continue developing new features and improvements. If you find this addon useful, consider supporting the project - it really makes a difference! 💙
-
-<a href="https://www.buymeacoffee.com/bigmoby" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-
----
 
 ### 🚀 Enhancements
 
 - **Replaced netcat with socat**: Improved HTTP server with persistent connections and better performance
 - **Unified API**: Combined status and services into single endpoint on port 51821
 
+### ⚠️ Important Note
+
+- **Port configuration migration**: After updating to v0.2.7, if you experience issues with the API (e.g., "WireGuard Unified API disabled (no port exposed)"), you may need to restore default network settings. Go to the add-on configuration → Network section → Click "Restore defaults" to update the port from the old configuration (e.g., port 80) to the new unified API port (51821). This is a known migration issue when upgrading from previous versions.
 
 ## What's changed in Wireguard Client Add-on v0.2.6
 
@@ -45,41 +54,41 @@
 - **Enhanced shutdown script**: Better cleanup process with fallback manual interface removal
 - **Better logging**: More detailed logging for troubleshooting interface conflicts
 - **Robust interface management**: Automatic detection and cleanup of stale WireGuard interfaces
-  
 
 ## What's changed in Wireguard Client Add-on v0.2.4
+
+### 🛠 Fixes
+
+- **Fixed wireguard-tools version conflict**: Updated from 1.0.20210914-r4 to 1.0.20250521-r0 to resolve package conflicts
+- **Fixed base image compatibility**: Updated from 16.3.4 to 18.1.4 for better Alpine Linux compatibility
 
 ### 💣 BREAKING CHANGES
 
 - **Removed support for deprecated architectures**: Following Home Assistant's deprecation notice, removed support for i386, armhf, and armv7 architectures. Only aarch64 and amd64 are now supported.
-
-### 🚀 Enhancements
-
 - Aligned with Home Assistant's official architecture support policy
 - Simplified build process by removing legacy architecture support
 
-## What’s changed in Wireguard Client Add-on v0.2.3
-## 🚀 Enhancements
+## What's changed in Wireguard Client Add-on v0.2.3
 
-* Comply with the log level setting when logging the current WireGuard … by @jlehtine in https://github.com/bigmoby/addon-wireguard-client/pull/30
-* Adds Known issues by @ziriuz84 in https://github.com/bigmoby/addon-wireguard-client/pull/33
+### 🛠 Fixs
 
-### ⬆️ Dependency updates
-
-- Upgrade wireguard-tools to 1.0.20210914-r4
+- Bump wireguard-tools to 1.0.20210914-r4
 
 ## What’s changed in Wireguard Client Add-on v0.2.2
+
 ### 🛠 Fixs
 
 - Fixed json formatting for api (thanks to @olpal )
 
 ## What’s changed in Wireguard Client Add-on v0.2.1
+
 ## 🚀 Enhancements
 
 - Add MTU configuration param
 - Readme fix
 
 ## What’s changed in Wireguard Client Add-on v0.2.0
+
 ## 🚀 Enhancements
 
 - Migrate JSON config to YAML
@@ -90,6 +99,7 @@
 - Upgrade wireguard-tools to 1.0.20210914-r0
 
 ## What’s changed in Wireguard Client Add-on v0.1.9
+
 ### 💣 BREAKING CHANGES
 
 - new peers section in order to configure several peer connection (thanks to Stefan Berggren aka "nsg" https://github.com/nsg for suggest me this feature and give me some hints with his PR)
@@ -112,7 +122,7 @@ peer:
   persistent_keep_alive: 25
 ```
 
-should be re-configured in 
+should be re-configured in
 
 ```yaml
 interface:
@@ -129,18 +139,19 @@ peers:
     endpoint: xxxxxxxxxxxxxxx.duckdns.org:51820
     allowed_ips:
       - 10.6.0.0/24
-    persistent_keep_alive: '25'
+    persistent_keep_alive: "25"
   - public_key: test_key
     pre_shared_key: test_key
     endpoint: yyyyyyyyyyyyyyy.duckdns.org:51820
     allowed_ips:
       - 10.6.0.1/24
-    persistent_keep_alive: '26'
+    persistent_keep_alive: "26"
 ```
 
- - `dns`,`post_up`,`post_down` have become optional params
+- `dns`,`post_up`,`post_down` have become optional params
 
-## What’s changed in Wireguard Client Add-on v0.1.8 
+## What’s changed in Wireguard Client Add-on v0.1.8
+
 ### 🛠 Fixs
 
 - hotfix to REST API service port (thanks to Klaus-Uwe Mitterer aka "Kumi" https://github.com/kumitterer)
@@ -151,12 +162,13 @@ peers:
 - Upgrade add-on base image to 10.0.1
 - Upgrade wireguard-tools version to 1.0.20210424-r0
 
-## What’s changed in Wireguard Client Add-on v0.1.7 
+## What’s changed in Wireguard Client Add-on v0.1.7
+
 ### 🛠 Fixs
 
 - hotfix to REST API service
 
-## What’s changed in Wireguard Client Add-on v0.1.6 
+## What’s changed in Wireguard Client Add-on v0.1.6
 
 ### 🚀 Improvements
 
