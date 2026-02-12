@@ -1,4 +1,4 @@
-# Home Assistant Bigmoby Add-on: WireGuard Client
+# Home Assistant Bigmoby App (or add-on): WireGuard Client
 
 WireGuard: fast, modern, secure VPN tunnel.
 
