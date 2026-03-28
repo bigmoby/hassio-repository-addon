@@ -1,3 +1,10 @@
+## What's changed in Wireguard Client App v0.2.10
+
+### 🚀 Enhancements
+
+- **Optional Endpoint for Roaming Peers (#60)**:
+  Changed the `endpoint` configuration type to optional (`str?`) to natively support inbound connections from dynamic or roaming clients. Now, clients like mobile devices can connect to the add-on dynamically (without specifying their endpoint IP proactively) when a fixed `listen-port` is configured via `post_up`.
+
 ## What's changed in Wireguard Client App (or add-on 🥸) v0.2.9
 
 ### 🐛 Bug Fixes & Improvements
