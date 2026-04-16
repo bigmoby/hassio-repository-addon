@@ -1,6 +1,6 @@
 ---
 name: Epiphany embedded browser
-version: 1.0.0
+version: 1.0.1
 slug: embdbrowser
 description: Epiphany embedded browser
 url: https://github.com/bigmoby/addon-embedded-browser/tree/main/embedded_browser
