@@ -1,4 +1,4 @@
-# 🚀 Release 1.0.0 - Stable Release
+# 🚀 Release 1.0.1 - Stable Release
 
 We are excited to announce the first stable release of the **Epiphany Embedded Browser** add-on! This version focuses on security, improved logging, and a more robust container architecture.
 
@@ -18,7 +18,7 @@ We are excited to announce the first stable release of the **Epiphany Embedded B
 - **Technical Architecture**: Added a comprehensive "How it works" section to the README and DOCS. This explains the internal stack (Xvnc -> Openbox -> Epiphany -> Websockify -> noVNC) for advanced users and contributors.
 
 ## 🛠 Internal Changes
-- **Version Bump**: Bumped to `1.0.0`.
+- **Version Bump**: Bumped to `1.0.1`.
 - **Production Image**: Enabled the pre-built image path in `config.yaml` for faster deployments.
 
 ---
