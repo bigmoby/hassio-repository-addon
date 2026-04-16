@@ -23,4 +23,4 @@ We are excited to announce the first stable release of the **Epiphany Embedded B
 
 ---
 
-**Full Changelog**: https://github.com/bigmoby/addon-embedded-browser/compare/v0.0.2...v1.0.0
+**Full Changelog**: https://github.com/bigmoby/addon-embedded-browser/compare/v0.0.2...v1.0.1
