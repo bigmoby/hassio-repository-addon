@@ -1,16 +1,15 @@
 ---
-name: Firefox embedded browser
-version: 0.0.1
+name: Epiphany embedded browser
+version: 1.0.0
 slug: embdbrowser
-description: Firefox embedded browser
+description: Epiphany embedded browser
 url: https://github.com/bigmoby/addon-embedded-browser/tree/main/embedded_browser
 arch:
   - amd64
-  - armhf
   - aarch64
 apparmor: false
 host_network: false
-stage: experimental
+stage: stable
 init: false
 hassio_api: true
 privileged:
@@ -20,5 +19,12 @@ usb: false
 startup: services
 ingress: true
 ingress_entry: ingress.html
+ingress_port: 8099
 kernel_modules: false
 image: "bigmoby/{arch}-addon-embedded-browser"
+options:
+  start_url: "http://192.168.1.1"
+  vnc_password: ""
+schema:
+  start_url: url
+  vnc_password: password?
