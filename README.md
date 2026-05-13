@@ -38,16 +38,15 @@ Fast, modern, secure VPN tunnel
 [:books: WireGuard add-on documentation][addon-doc-wireguard-client]
 
 
-### &#10003; [Surf embedded browser][addon-embedded-browser]
+### &#10003; [Epiphany embedded browser][addon-embedded-browser]
 
 ![Latest Version][embedded-browser-version-shield]
 ![Supports aarch64 Architecture][embedded-browser-aarch64-shield]
 ![Supports amd64 Architecture][embedded-browser-amd64-shield]
-![Supports armv7 Architecture][embedded-browser-armv7-shield]
 
 [WARNING] Please DO NOT use this add-on unless you really KNOW what you are doing! It is in a very early stage of development. [WARNING]
 
-[:books: Surf embedded browser add-on documentation][addon-doc-embedded-browser]
+[:books: Epiphany embedded browser add-on documentation][addon-doc-embedded-browser]
 
 ## Releases
 
@@ -66,7 +65,7 @@ GitHub repository for each add-on. Please ensure you are creating the issue
 on the correct GitHub repository matching the add-on.
 
 - [Open an issue for the add-on: WireGuard][wireguard-client-issue]
-- [Open an issue for the add-on: Firefox embedded browser][embedded-browser-issue]
+- [Open an issue for the add-on: Epiphany embedded browser][embedded-browser-issue]
 
 For a general repository issue or add-on ideas [open an issue here][issue]
 
