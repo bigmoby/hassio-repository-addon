@@ -1,3 +1,12 @@
+# 🚀 Release 1.0.2
+
+## 🐞 Bug Fixes & Stability
+- **Mobile Keyboard Support**: Changed the noVNC interface from `vnc_lite.html` to the full `vnc.html`. This restores the control bar, allowing users on mobile devices to summon the native virtual keyboard and interact with the browser.
+
+**Full Changelog**: https://github.com/bigmoby/addon-embedded-browser/compare/v1.0.1...v1.0.2
+
+---
+
 # 🚀 Release 1.0.1 - Stable Release
 
 We are excited to announce the first stable release of the **Epiphany Embedded Browser** add-on! This version focuses on security, improved logging, and a more robust container architecture.
