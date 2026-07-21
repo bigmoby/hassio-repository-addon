@@ -1,22 +1,33 @@
+## What's changed in Wireguard Client App v0.3.0
+
+### 🚀 Major Enhancements
+
+- **Automatic Multi-Peer Failover**:
+  Added support for multi-peer/multi-server failover. If the active connection goes down, a background watchdog daemon automatically fails over to a backup peer, avoiding cryptokey routing conflicts by only activating the `AllowedIPs` of the currently active peer.
+- **Per-Peer Ping IP Support**:
+  Added support for specifying a dedicated `ping_ip` per peer (`peers[].ping_ip`) to accurately verify connection health for each specific peer network, with fallback to the global `failover.ping_ip`.
+- **Preemption & Auto-Revert**:
+  The watchdog periodically attempts to revert back to the primary peer once the connection recovers.
+
 ## What's changed in Wireguard Client App v0.2.10
 
 ### 🚀 Enhancements
 
 - **Optional Endpoint for Roaming Peers (#60)**:
-  Changed the `endpoint` configuration type to optional (`str?`) to natively support inbound connections from dynamic or roaming clients. Now, clients like mobile devices can connect to the add-on dynamically (without specifying their endpoint IP proactively) when a fixed `listen-port` is configured via `post_up`.
+  Changed the `endpoint` configuration type to optional (`str?`) to natively support inbound connections from dynamic or roaming clients. Now, clients like mobile devices can connect to the app dynamically (without specifying their endpoint IP proactively) when a fixed `listen-port` is configured via `post_up`.
 
 ## What's changed in Wireguard Client App (or add-on 🥸) v0.2.9
 
 ### 🐛 Bug Fixes & Improvements
 
-*   **Workaround for HIBP check (#58)**:
-    Changed the `private_key` configuration type from `password` to `str`. This prevents the addon from failing to start or save configuration when the Home Assistant Supervisor cannot reach the "Have I Been Pwned" (HIBP) service (due to network issues, firewalls, or outages). This change ensures the addon is robust and reliable even in offline or restricted network environments.
-    *(Thanks to @negaft for the contribution! in https://github.com/bigmoby/addon-wireguard-client/pull/58)*
+- **Workaround for HIBP check (#58)**:
+  Changed the `private_key` configuration type from `password` to `str`. This prevents the addon from failing to start or save configuration when the Home Assistant Supervisor cannot reach the "Have I Been Pwned" (HIBP) service (due to network issues, firewalls, or outages). This change ensures the addon is robust and reliable even in offline or restricted network environments.
+  _(Thanks to @negaft for the contribution! in https://github.com/bigmoby/addon-wireguard-client/pull/58)_
 
 ### 📚 Documentation
 
-*   **English Documentation**: Translated the WireGuard server setup guide (for add-on testing purpose only!) ([wireguard-server/README.md](cci:7://file:///Users/bigmoby/Documents/HomeAssistant/addon-wireguard-client/wireguard-server/README.md:0:0-0:0)) and script outputs to English for better accessibility.
-*   **Git Security**: Updated [.gitignore](cci:7://file:///Users/bigmoby/Documents/HomeAssistant/addon-wireguard-client/.gitignore:0:0-0:0) to safely track WireGuard server helper scripts while strictly excluding sensitive configuration files (private keys).
+- **English Documentation**: Translated the WireGuard server setup guide (for add-on testing purpose only!) ([wireguard-server/README.md](cci:7://file:///Users/bigmoby/Documents/HomeAssistant/addon-wireguard-client/wireguard-server/README.md:0:0-0:0)) and script outputs to English for better accessibility.
+- **Git Security**: Updated [.gitignore](cci:7://file:///Users/bigmoby/Documents/HomeAssistant/addon-wireguard-client/.gitignore:0:0-0:0) to safely track WireGuard server helper scripts while strictly excluding sensitive configuration files (private keys).
 
 ## What's changed in Wireguard Client Add-on v0.2.8
 
