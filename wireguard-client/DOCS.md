@@ -95,6 +95,30 @@ peers:
 1. Save the configuration.
 1. Start the "WireGuard" app
 
+### Configuration options
+
+| Option | Required | Description |
+| --- | --- | --- |
+| `log_level` | no | Log verbosity: `trace`, `debug`, `info` (default), `notice`, `warning`, `error`, `fatal`. See [Logging](#logging). |
+| `api_bind` | no | Address the [Unified API](#wireguard-client-unified-api) listens on. Default `127.0.0.1` (localhost only); use `0.0.0.0` to expose it on all host interfaces. |
+| `interface.private_key` | yes | Private key of this client. |
+| `interface.address` | yes | Address of this client inside the VPN (e.g. `10.6.0.2`; `/24` is added if no prefix is given). |
+| `interface.dns` | no | DNS servers to use while the tunnel is up. |
+| `interface.post_up` / `interface.post_down` | no | Commands run after the interface is brought up / down (e.g. iptables rules). |
+| `interface.mtu` | yes | MTU of the WireGuard interface (e.g. `1420`). |
+| `peers[].public_key` | yes | Public key of the peer (server). |
+| `peers[].pre_shared_key` | no | Optional pre-shared key. |
+| `peers[].endpoint` | no* | `host:port` of the peer. *Required when connecting to a VPN server. |
+| `peers[].allowed_ips` | yes | Networks routed through the tunnel. `0.0.0.0/0` is not supported. |
+| `peers[].persistent_keep_alive` | yes | Keepalive interval in seconds (e.g. `25`). |
+| `peers[].ping_ip` | no | IP inside the VPN used to verify the peer is really reachable (by `GET /test` and by the failover watchdog), e.g. the VPN server address `10.6.0.1`. |
+| `peers[].private_key` / `address` / `dns` | no | Per-peer overrides of the `interface` values, used only when failover is enabled. |
+| `failover.*` | no | See [Automatic Peer Failover](#automatic-peer-failover). |
+
+> **ℹ️ DNS**: when `interface.dns` is set, those servers replace the system DNS while the tunnel is up. Whenever the tunnel is down (e.g. while the failover switches peer), the system DNS is restored, so endpoints with a hostname (e.g. DuckDNS) can still be resolved.
+
+> **💡 Tip**: set `ping_ip` on each peer. Without it, `GET /test` can only check the handshake (or ping a `/32` allowed IP, if any).
+
 ### Automatic Peer Failover
 
 If you have multiple WireGuard servers (e.g. for redundancy in case of power outages or downtime), you can configure the app to automatically switch to alternative peers when the active one goes down.
@@ -133,6 +157,34 @@ failover:
 2. **Watchdog Daemon**: A background service monitors connection health. If the handshake age exceeds `handshake_threshold` (and `ping_ip` is unreachable if configured) for `max_failures` consecutive times, it switches the active peer to the next one in the list and restarts the interface.
 3. **Preemption (Revert)**: When running on a backup peer, the daemon will attempt to switch back to the primary peer (index 0) every `revert_interval` seconds to see if the main server has recovered.
 
+## Logging
+
+The optional `log_level` option controls how much the app writes to its log:
+
+```yaml
+log_level: info
+```
+
+Available levels, from the most to the least verbose: `trace`, `debug`, `info` (default), `notice`, `warning`, `error`, `fatal`.
+
+The WireGuard status (the output of `wg show`: peers, endpoints, latest handshake, transfer) is written to the log depending on the level:
+
+| `log_level` | WireGuard status in the log |
+| --- | --- |
+| `trace`, `debug` | Once, 30 seconds after startup, then **every 30 seconds** |
+| `info` (default) | **Once**, 30 seconds after startup |
+| `notice` and above | Never |
+
+To follow the tunnel continuously in the log (e.g. while troubleshooting), set `log_level: debug`. For day-to-day monitoring, prefer the [Unified API](#wireguard-client-unified-api) sensors, which do not fill the log.
+
+At startup the app also logs the iptables version and backend used by `post_up` / `post_down`:
+
+```text
+INFO: iptables: iptables v1.8.13 (nf_tables)
+```
+
+If the backend is `legacy`, a warning is logged: recent Home Assistant OS kernels may not provide the legacy modules (e.g. `can't initialize iptables table 'nat'`).
+
 ## WireGuard Client Unified API
 
 This app provides a unified API on port 51821 with comprehensive functionality.
@@ -154,9 +206,9 @@ Returns detailed WireGuard status information including:
 
 Provides VPN control actions:
 
-- **Reconnect**: Restart WireGuard connection
-- **Restart**: Full service restart
-- **Test**: Comprehensive connection validation
+- **Reconnect** (`GET /reconnect`): Restart WireGuard connection
+- **Restart** (`GET /restart`): Full service restart
+- **Test** (`GET /test`): Connection health check: recent handshake (within 5 minutes) and, when a ping target is available, reachability through the tunnel. The ping target is the active peer's `ping_ip`, then `failover.ping_ip`, then a `/32` allowed IP. Returns `"result": "error"` if the target does not answer, and `success` again as soon as it does.
 
 ### 🏠 Home Assistant Integration
 
@@ -197,24 +249,22 @@ rest_command:
 
 ## Local Development
 
-If you are developing this app in a cloud environment where standard UI commands like "Dev Containers: Rebuild Container" might not be available, follow these steps to mount your workspace changes directly into the local Home Assistant Supervisor running in the container:
+The repository ships a devcontainer based on `ghcr.io/home-assistant/devcontainer:5-apps` that runs a full Home Assistant (Supervisor beta channel) with this app available as a local app.
 
-1. Stop any currently running `supervisor_run` process (use `Ctrl+C`).
-2. Run the bootstrap script manually to bind mount the workspace to the Supervisor's local apps folder:
-   ```bash
-   ./devcontainer_bootstrap
-   ```
-3. Restart the Supervisor:
-   ```bash
-   bash -c 'echo "Avvio Home Assistant..." && supervisor_run'
-   ```
-4. In Home Assistant, go to **Settings > Add-ons > Add-on Store** and verify your apps appear under **Local apps**.
+1. Open the repository in the devcontainer ("Dev Containers: Reopen in Container").
+2. Run the **Start Home Assistant** task (or `supervisor_run` in a terminal).
+3. Open Home Assistant at `http://localhost:8124` and complete the onboarding.
+4. Go to **Settings > Apps > App Store**: the app is listed under **Local apps**.
+
+To test your local changes, comment out the `image:` line in `wireguard_client/config.yaml` (do not commit it): the Supervisor then builds the app from the local `Dockerfile` instead of pulling the published image. After changing the code, use **Rebuild** on the app page.
+
+The `wireguard-server/` folder contains two local WireGuard servers to test the client and the failover (see `wireguard-server/README.md`).
 
 ## Authors & contributors
 
 The original setup of this repository is by [Fabio Mauro][bigmoby].
 
-This is a fork of Wireguard App
+This is a fork of [Wireguard App][original_project].
 
 ## License
 
