@@ -1,3 +1,25 @@
+## What's changed in Wireguard Client App v0.4.1
+
+### 🐛 Bug Fixes
+
+- **WireGuard status flooding the log**: the status service printed the full `wg show` output every ~30 seconds, because it exited after each run and was restarted by the supervisor. The service now stays running, and the status is logged according to `log_level`:
+
+  | `log_level` | WireGuard status in the log |
+  | --- | --- |
+  | `trace`, `debug` | Once after 30 seconds, then **every 30 seconds** |
+  | `info` (default) | **Once**, 30 seconds after startup |
+  | `notice` and above | Never |
+
+  With the default configuration, the log now shows the tunnel status only once at startup instead of filling up over time. To get the periodic status back (e.g. while troubleshooting), set `log_level: debug`.
+
+### 📚 Documentation
+
+- New **Configuration options** reference covering every option, including `api_bind`, `log_level`, `peers[].ping_ip` and the DNS behaviour.
+- New **Logging** section: how `log_level` works, when the WireGuard status is printed, and how to read the iptables backend line logged at startup.
+- Updated the `GET /test` description, plus a new "VPN health" binary sensor example in `API.md`.
+- README: new known issue for `can't initialize iptables table 'nat'` (#62), the v0.4.0 breaking change, and fixed links and badges.
+- Updated the **Local Development** section for the new devcontainer.
+
 ## What's changed in Wireguard Client App v0.4.0
 
 ### 🔥 Major Changes
@@ -37,7 +59,6 @@ Existing `post_up` / `post_down` iptables rules keep working unchanged: they now
 
 - CI migrated to the new `home-assistant/builder` actions (the legacy action has been retired), with linting (add-on linter, hadolint, shellcheck, yamllint) and Renovate for dependency updates.
 - Devcontainer updated to `ghcr.io/home-assistant/devcontainer:5-apps`.
-  
 
 ## What's changed in Wireguard Client App v0.3.2
 
